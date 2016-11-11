@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    
+    public static int pangram(String str)
+        {
+        if(str.length()<0)
+                return -1;
+        for(char c='A';c<='Z';c++)
+            {
+            if(str.indexOf(c)<0 && str.indexOf((char)(c+32))<0)
+                {
+                return 0;
+            }
+        }
+        return 1;
+    }
+    
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str=sc.nextLine();
+        if(pangram(str)==1)
+            System.out.println("pangram");
+        else
+            System.out.println("not pangram");
+        
+
+    }
+}

@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String time = in.next();
+        String[] T = time.split("[:]");
+        int  t = Integer.parseInt(T[0]);
+        if(time.indexOf("PM")>0){
+            if(t!=12){ 
+             t+=12;
+            }
+            T[2]=T[2].replace("PM","");
+            T[0]=Integer.toString(t);
+            System.out.println(T[0]+":"+T[1]+":"+T[2]);
+        }
+        else {
+            if(t==12) t-=12;
+            T[0]=Integer.toString(t);
+            T[2]=T[2].replace("AM","");
+            System.out.println("0"+T[0]+":"+T[1]+":"+T[2]);
+        }
+    }
+}
