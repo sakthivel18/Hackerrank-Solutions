@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    String word = sc.next();
+    int i;
+    for(i = 1;i<word.length();i++)
+        {
+        if(word.charAt(i-1)==word.charAt(i))
+        {
+            word = word.substring(0,i-1)+word.substring(i+1);
+            i=0;
+        }
+    }
+        if(word.length()>0)
+            System.out.println(word);
+        else
+            System.out.println("Empty String");
+
+    
+    
